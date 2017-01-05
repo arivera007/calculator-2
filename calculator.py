@@ -9,15 +9,19 @@ from arithmetic import *
 
 
 def is_input_valid(token_list):
-    return True
+    for token in token_list[1:]:
+        if token in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            return True
+        else:
+            return False
 
 # Your code goes here
 while True:
     user_input = raw_input("prefix equation: >  ")
     token_list = user_input.split(' ')
-    print token_list
-    token_list = [x for x in token_list if x != '']            
-    print token_list
+    #print token_list
+    token_list = [x for x in token_list if x != '']  # Strip all spaces          
+    #print token_list
     if token_list[0] == 'q':
         break
     else:
