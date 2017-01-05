@@ -1,19 +1,44 @@
-def add(num1, num2):
-    return num1 + num2
+def add(num_list):
 
 
-def subtract(num1, num2):
-    return num1 - num2
+    return reduce(lambda x, y: int(x)+int(y), num_list)
+
+#    total = 0
+#    for num in num_list:
+#        total += int(num)
+#    return total
 
 
-def multiply(num1, num2):
-    return num1 * num2
+def subtract(num_list):
+
+    return reduce(lambda x, y: int(x)-int(y), num_list)
+
+#    total = int(num_list[0])
+#    for num in num_list[1:]:
+#        total = total - int(num)
+#    return total
 
 
-def divide(num1, num2):
+def multiply(num_list):
+
+    return reduce(lambda x, y: int(x)*int(y), num_list)
+
+#    total = int(num_list[0])
+#    for num in num_list[1:]:
+#        total = total * int(num)
+#    return total
+
+
+def divide(num_list):
     # Need to turn at least argument to float for division to
     # not be integer division
-    return float(num1) / float(num2) 
+
+    return reduce(lambda x, y: int(x)/int(y), num_list)
+
+#    total = float(num_list[0])
+#    for num in num_list[1:]:
+#        total = total / float(num)
+#    return total
 
 
 def square(num1):
@@ -26,9 +51,16 @@ def cube(num1):
     return num1 * num1 * num1
 
 
-def power(num1, num2):
-    return num1 ** num2  # ** = exponent operator
+def power(num_list):
+    total = int(num_list[0])
+    for num in num_list[1:]:
+        total = total ** int(num)  # ** = exponent operator
+    return total
 
 
-def mod(num1, num2):
-    return num1 % num2
+def mod(num_list):
+    total = int(num_list[0])
+    for num in num_list[1:]:
+        total = total % int(num)
+    return total
+
