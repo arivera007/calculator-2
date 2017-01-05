@@ -15,6 +15,9 @@ def is_input_valid(token_list):
 while True:
     user_input = raw_input("prefix equation: >  ")
     token_list = user_input.split(' ')
+    print token_list
+    token_list = [x for x in token_list if x != '']            
+    print token_list
     if token_list[0] == 'q':
         break
     else:
